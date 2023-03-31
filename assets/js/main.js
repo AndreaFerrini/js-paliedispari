@@ -27,3 +27,32 @@ Sommiamo i due numeri
 Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 Dichiariamo chi ha vinto.
 */
+
+let sceltaUtente = prompt('scegli pari o dispari')
+let numeroUtente = parseInt( prompt('Inserisci un numero da 1 a 5') )
+let numeroPc = NumeroRandom( 1, 5 );
+
+console.log( ` scelta utente: ${sceltaUtente}` )
+console.log( ` numero pc: ${numeroPc}` )
+console.log( ` numero utente: ${numeroUtente}` )
+
+let somma = numeroPc + numeroUtente;
+console.log(` somma numeri: ${somma}` )
+
+if( pariDispari(somma) == sceltaUtente) {
+    console.log( `ha vinto l' utente`)
+} else {
+    console.log(` ha vinto il Pc`)
+}
+
+function pariDispari(x) {
+    if( x % 2 ==0 ) {
+        return 'pari'
+    } else {
+        return 'dispari'
+    }
+}
+
+function NumeroRandom(min, max) {
+    return Math.floor( Math.random() * max ) + min
+}
